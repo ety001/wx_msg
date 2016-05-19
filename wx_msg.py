@@ -2,7 +2,7 @@
 import urllib, urllib2, json, os, time, sys
 
 # You need to edit from here
-tmpl_id = 'PT0X_93niu22Ti3CYqEL0bXPkflJ06zUK5Yt3_KCF_g'
+tmpl_id = 'jX6DIlRzbr3dV1v6195qgLRFn6TVr2SEd6TGoFo5s1U'
 appid = 'wx54602a12c477c961'
 secret = 'dde1ceb8fb98cb3ec0a70e9f0849221b'
 user_id = 'oUeGNtz41L35y49a_xqXGjWeBazU'
@@ -14,6 +14,18 @@ tmpl_data = {
     'topcolor': '#ff0000',
     'data': {
         'first': {
+            'value': '',
+            'color': '#173177'
+        },
+        'send': {
+            'value': '',
+            'color': '#173177'
+        },
+        'text': {
+            'value': '',
+            'color': '#173177'
+        },
+        'time': {
             'value': '',
             'color': '#173177'
         },
