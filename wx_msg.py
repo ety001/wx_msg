@@ -2,10 +2,10 @@
 import urllib, urllib2, json, os, time, sys
 
 # You need to edit from here
-tmpl_id = 'jX6DIlRzbr3dV1v6195qgLRFn6TVr2SEd6TGoFo5s1U'
-appid = 'wx54602a12c477c961'
-secret = 'dde1ceb8fb98cb3ec0a70e9f0849221b'
-user_id = 'oUeGNtz41L35y49a_xqXGjWeBazU'
+tmpl_id = 'your template id'
+appid = 'your app id'
+secret = 'your app secret'
+user_id = 'your user id'
 
 tmpl_data = {
     'touser':user_id,
