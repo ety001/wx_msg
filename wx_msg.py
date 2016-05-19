@@ -44,10 +44,10 @@ access_url += appid+'&secret='+secret
 tmpl_url = 'https://api.weixin.qq.com/cgi-bin/message/template/send'
 tmpl_url += '?access_token='
 
-def get_access_token():
-    realpath = os.path.split(os.path.realpath(__file__))[0]
-    cachepath = realpath + r'/cache.log'
+realpath = os.path.split(os.path.realpath(__file__))[0]
+cachepath = realpath + r'/cache.log'
 
+def get_access_token():
     if os.path.exists(cachepath):
         f = open(cachepath, 'r')
         data = f.readline().split('|')
@@ -80,10 +80,17 @@ def get_tmpl_url():
 def send(params):
     param_arr = params.split('|')
     for v in param_arr:
-        v = v.split(':')
+        v = v.split('::')   # using :: to avoid conflicting
         tmpl_data['data'][v[0]]['value'] = v[1]
     request = urllib2.Request(get_tmpl_url() , json.dumps(tmpl_data))
     response = urllib2.urlopen(request)
+    res = response.read()
+    print res
+    if json.loads(res)['errcode'] == 40001:
+        f = file(cachepath,"w+")
+        f.writelines([''])
+        f.close()
+        send(sys.argv[1])
 
 if len(sys.argv) == 3:
     user_id = sys.argv[2]
