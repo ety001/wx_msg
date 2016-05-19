@@ -67,12 +67,11 @@ def get_tmpl_url():
 
 def send(params):
     param_arr = params.split('|')
-    i = 0
-    for k in tmpl_data['data']:
-        tmpl_data['data'][k]['value'] = param_arr[i]
-        i = i + 1
+    for v in param_arr:
+        v = v.split(':')
+        tmpl_data['data'][v[0]]['value'] = v[1]
     request = urllib2.Request(get_tmpl_url() , json.dumps(tmpl_data))
-    response=urllib2.urlopen(request)
+    response = urllib2.urlopen(request)
 
 if len(sys.argv) == 3:
     user_id = sys.argv[2]
