@@ -46,7 +46,9 @@ python wx_msg.py "first::hi|send::18989|text::hello|time::2015-10-22"
 
 # 其他备注事项
 
-你的模板里有几项，最后使用命令的时候，参数必须小于等于模板的项目数，比如我这里设置的模板里有 `first`, `send`, `text`, `time`, `remark`， 那么我在使用命令的时候，就只能使用以上的这些参数
+1.你的模板里有几项，最后使用命令的时候，参数必须小于等于模板的项目数，比如我这里设置的模板里有 `first`, `send`, `text`, `time`, `remark`， 那么我在使用命令的时候，就只能使用以上的这些参数
+
+2.如果用 `ln` 放到了 `/usr/bin` 之类的目录里，请注意 `wx_msg.py` 和 `cache.log` 的权限设置
 
 Licence [MIT](https://github.com/ety001/wx_msg/blob/master/LICENSE)
 
